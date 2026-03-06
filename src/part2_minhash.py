@@ -5,15 +5,7 @@ import sys
 import os
 import random
 import time
-
-repo_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-
-
-def read_txt(txt_file):
-    txt_file = os.path.join(repo_path, "data", txt_file)
-    with open(txt_file, 'r') as fp:
-        return fp.read().strip()
-    return None
+from minhash_lsh_utility import read_txt 
 
 def char_grams(s: str, k: int):
     out = set()

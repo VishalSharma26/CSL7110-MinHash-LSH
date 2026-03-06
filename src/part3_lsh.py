@@ -5,16 +5,7 @@ import sys
 import os
 from itertools import combinations
 
-repo_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-
-def read_docs():
-    all_text = {}
-    for i in [1, 2, 3, 4]:
-        txt_file = os.path.join(repo_path, "data",  f"D{i}.txt")
-        with open(txt_file, 'r') as fp:
-            all_text[f"D{i}"] = fp.read().strip()
-    return all_text
-
+from minhash_lsh_utility import read_docs
 
 def char_grams(s, k=3):
     return {s[i:i+k] for i in range(len(s) - k + 1)}
